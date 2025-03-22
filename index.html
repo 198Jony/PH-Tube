@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PH Tube</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        .font-Inter{
+        font-family: "Inter", sans-serif;
+        }
+        .active{
+            background-color: red;
+            color:white;
+        }
+    </style>
+
 </head>
-<body>
-    
+<body class="font-Inter">
+     
+    <section class="max-w-screen-xl min-h-screen mx-auto">
+      <header>
+         <nav class="flex justify-between items-center border-b border-slate-300 py-5">
+            <div>
+                <img src="assets\Logo.png" alt="">
+            </div>
+            <div>
+                <label id="valid-input" class="input">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
+                    <input type="search" required placeholder="Search"/>
+                </label>
+            </div>
+            <div>
+                <button class="bg-red-500 text-white px-4 py-2 rounded-sm">Blog</button>
+            </div>
+         </nav>
+      </header>
+
+      <main class="py-5">
+         <section id="category-container" class="flex justify-center items-center gap-3">
+             <div>
+                <button onclick="fetchVideos()" class="btn btn-sm bg-red-500 text-white">All</button>
+             </div>
+         </section>
+         
+         <section id="loading" class="text-center mt-20 hidden">
+            <span class="loading loading-ring loading-xl"></span>
+         </section>
+         <section id="video-container" class="py-10 grid grid-cols-4 gap-5">
+            <div class="flex justify-center items-center col-span-full mt-20">
+                <div>
+                    <img class="mx-auto" src="assets\Icon.png" alt="">
+                    <p>Oops!! Sorry, There is no content here</p>
+                </div>
+            </div>
+         </section>
+      </main>
+      
+      
+    </section>
+
+   
+
+    <script src="script.js"></script>
 </body>
 </html>
